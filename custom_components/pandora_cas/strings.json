@@ -30,6 +30,8 @@
       "block_heater_disabled": "Event: Block Heater Disabled",
       "block_heater_enabled": "Event: Block Heater Enabled",
       "bluetooth_status": "Event: Bluetooth Status",
+      "charging_started": "Event: Charging Started",
+      "charging_stopped": "Event: Charging Stopped",
       "check_received": "Event: Check Received",
       "collision": "Event: Collision",
       "driving": "Event: Driving",
@@ -525,6 +527,22 @@
       },
       "can_mileage_to_empty": {
         "name": "CAN Mileage to empty",
+        "state_attributes": {
+          "device_id": {
+            "name": "Pandora Device"
+          }
+        }
+      },
+      "charging_start": {
+        "name": "Charging Start",
+        "state_attributes": {
+          "device_id": {
+            "name": "Pandora Device"
+          }
+        }
+      },
+      "charging_start_soc": {
+        "name": "Charging Start SOC",
         "state_attributes": {
           "device_id": {
             "name": "Pandora Device"

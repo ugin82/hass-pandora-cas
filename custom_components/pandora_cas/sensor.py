@@ -167,6 +167,22 @@ ENTITY_TYPES = [
         entity_category=EntityCategory.DIAGNOSTIC,
     ),
     PandoraCASSensorEntityDescription(
+        key="charging_start_soc",
+        name="Charging Start SOC",
+        icon="mdi:battery-charging-outline",
+        native_unit_of_measurement=PERCENTAGE,
+        attribute=CurrentState.ev_charging_start_state_of_charge,
+        state_class=SensorStateClass.MEASUREMENT,
+        suggested_display_precision=0,
+    ),
+    PandoraCASSensorEntityDescription(
+        key="charging_start",
+        name="Charging Start",
+        icon="mdi:clock-start",
+        attribute=CurrentState.ev_charging_start_timestamp,
+        device_class=SensorDeviceClass.TIMESTAMP,
+    ),
+    PandoraCASSensorEntityDescription(
         key="interior_temperature",
         name="Interior Temperature",
         icon="mdi:thermometer",
@@ -561,6 +577,9 @@ class PandoraCASSensor(PandoraCASEntity, SensorEntity):
 
     def get_native_value(self) -> Any | None:
         native_value = super().get_native_value()
+        if self.entity_description.key == "charging_start" and not native_value:
+            # zero means "no charging session known", not 1970-01-01
+            return None
         if self.entity_description.key == "tachometer":
             if native_value:
                 return int(

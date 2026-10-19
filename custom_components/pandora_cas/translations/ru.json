@@ -30,6 +30,8 @@
       "block_heater_disabled": "Событие: Отключение предпускового подогревателя",
       "block_heater_enabled": "Событие: Включение предпускового подогревателя",
       "bluetooth_status": "Событие: Состояние Bluetooth",
+      "charging_started": "Событие: Начало зарядки",
+      "charging_stopped": "Событие: Окончание зарядки",
       "check_received": "Событие: Получена команда CHECK",
       "collision": "Событие: Столкновение",
       "driving": "Событие: В движении",
@@ -585,6 +587,22 @@
       },
       "can_mileage_to_empty": {
         "name": "Пробег по CAN на топливе",
+        "state_attributes": {
+          "device_id": {
+            "name": "Устройство Pandora"
+          }
+        }
+      },
+      "charging_start": {
+        "name": "Начало зарядки",
+        "state_attributes": {
+          "device_id": {
+            "name": "Устройство Pandora"
+          }
+        }
+      },
+      "charging_start_soc": {
+        "name": "Заряд в начале зарядки",
         "state_attributes": {
           "device_id": {
             "name": "Устройство Pandora"
