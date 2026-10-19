@@ -12,10 +12,10 @@
   "documentation": "https://github.com/alryaz/hass-pandora-cas",
   "integration_type": "hub",
   "iot_class": "cloud_push",
-  "issue_tracker": "https://github.com/alryaz/hass-pandora-cas/issues",
+  "issue_tracker": "https://github.com/ugin82/hass-pandora-cas/issues",
   "requirements": [
     "haversine~=2.8.0",
-    "pandora-cas==0.0.16"
+    "git+https://github.com/ugin82/python-pandora-cas@v0.0.16-ugin82.1#pandora-cas==0.0.16+ugin82.1"
   ],
-  "version": "2025.2.4"
+  "version": "2025.2.4+ugin82.1"
 }
